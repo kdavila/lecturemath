@@ -9,7 +9,7 @@ The files in "DLHAU2020_release" are for the paper Skeleton-based Methods for Sp
 - output
    - action_segments_csv.zip: this file contains data of the action segment information for both training/testing videos of LectureMath dataset.
    - annotations.zip: this file contains action labels for all videos of LectureMath dataset.
-- conf_lectureMath.conf: this file is for running the code of AccessMath Pose that is used as the baseline method in this paper.
+- conf_lectureMath.conf: this file is for running the code of [AccessMath Pose](https://github.com/adaniefei/AccessMath_Pose) that is used as the baseline method in this paper.
 - db_LectureMath.xml: this file contains video information (e.g. video ID, original video name, youtube link) in LectureMath dataset.
 
 
