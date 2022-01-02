@@ -1,0 +1,1 @@
+Place here the lecture videos that will be processed. Only videos that are properly registered on the corresponding lecture DB file (.xml) will be considered.

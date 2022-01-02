@@ -1,0 +1,1 @@
+By default, all temporal files from multiple scripts will be saved here.

@@ -1,0 +1,1 @@
+Place here the images that will be used for debugging of the network training for binarization

@@ -1,0 +1,1 @@
+Place here the images that will be used to pre-train the network for reconstruction

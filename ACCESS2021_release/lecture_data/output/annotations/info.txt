@@ -1,0 +1,1 @@
+Place here all lecture annotations. There should be a main XML file per lecture along with a directory with the same name that contains other detailed annotations such as the key-frames.

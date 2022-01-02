@@ -1,0 +1,1 @@
+Place here training images for text-detection pretraining

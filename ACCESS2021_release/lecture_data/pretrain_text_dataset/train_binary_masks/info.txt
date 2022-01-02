@@ -1,0 +1,1 @@
+Place here the binary masks of the text found on each training image for the text-detection pretraining

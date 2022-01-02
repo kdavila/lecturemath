@@ -1,0 +1,1 @@
+By default, all images from multiple scripts will be saved here.
