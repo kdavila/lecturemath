@@ -4,7 +4,7 @@ The files in here are for the paper *FCN-LectureNet: Extractive Summarization of
 
 ![alt text](https://raw.githubusercontent.com/adaniefei/Other/images/Overall-Arch.png?raw=true "overall-arch")
 
-![alt text](https://raw.githubusercontent.com/adaniefei/Other/images/FCN-LectureNet-Arch.png "fcn-lecturenet-arch")
+![alt text](https://raw.githubusercontent.com/adaniefei/Other/images/FCN-LectureNet-Arch_resize.png?raw=true "fcn-lecturenet-arch")
 
 Network Training Pipeline
 OK - lecturenet_train_00_pretrain_reconstruction.py
