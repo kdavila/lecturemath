@@ -88,21 +88,6 @@ After segmenting lecture videos, the final video summary is represented by gener
 
 ---
 
-
-
-
-
-
-
-
-
-Summarization Pipeline
-OK - python pre_ST3D_v3.0_01_binarize.py
-OK - python pre_ST3D_v3.0_02_cc_analysis.py
-OK - python pre_ST3D_v3.0_03_cc_grouping.py
-OK - python pre_ST3D_v3.0_04_vid_segmentation.py
-OK - python pre_ST3D_v3.0_05_generate_summary.py
-
 Evaluation Pipeline
 OK - lecturenet_eval_pretrain_text_detector.py
 OK - lecturenet_eval_segments.py
