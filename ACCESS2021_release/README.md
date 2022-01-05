@@ -1,8 +1,6 @@
 ## Welcome to LectureMath (IEEE ACCESS 2021 Release)
 
-The files in here are for the paper [*FCN-LectureNet: Extractive Summarization of Whiteboard and Chalkboard Lecture Videos*](https://ieeexplore.ieee.org/abstract/document/9494351) (IEEE ACCESS 2021).
-
-These files are mainly grouped into four sections:
+The files in here are for the paper [*FCN-LectureNet: Extractive Summarization of Whiteboard and Chalkboard Lecture Videos*](https://ieeexplore.ieee.org/abstract/document/9494351) (IEEE ACCESS 2021). These files are mainly grouped into four sections:
 
 [FCN-LectureNet Training](#fcn-lecturenet-training)
 
