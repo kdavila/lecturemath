@@ -59,7 +59,7 @@ The config file provides parameters `FCN_BINARIZER_NET_*` that are used to creat
 
 >>
 
-These outputs are then analyzed to identify unique and stable Connected Components (CCs) to represent hand written content, and these CCs are grouped into tracklets that define the timeline of each group of handwritting symbols. 
+These outputs are then analyzed to identify unique and stable Connected Components (CCs) to represent handwritten content, and these CCs are grouped into tracklets that define the timeline of each group of handwritting symbols. 
      
      python pre_ST3D_v3.0_02_cc_analysis.py [path of config file] [other parameters]
      python pre_ST3D_v3.0_03_cc_grouping.py [path of config file] [other parameters]
@@ -70,7 +70,7 @@ In `pre_ST3D_v3.0_03_cc_grouping.py`, three types of CCs are generated:
      CC_CONFLICTS_OUTPUT = tempo_cc_conflicts_
      CC_ST3D_OUTPUT = tempo_cc_ST3D_
      
-These CCs are used for semantic lecture video segmentation. In `python pre_ST3D_v3.0_04_vid_segmentation.py`, there are three vide segmentation options:
+These CCs are used for semantic lecture video segmentation. In `python pre_ST3D_v3.0_04_vid_segmentation.py`, there are three video segmentation options:
 
 - SUMS: It uses sliding window to find video keyframes that have the maximum content. [This method](https://ieeexplore.ieee.org/document/4351897) is from one of the baselines in the [previous work](https://www.cs.rit.edu/~rlaz/files/Kenny_ICDAR_2017.pdf).   
 - CC Conflicts: It splits video via minimizing the CCs conflict. This method is a variation of the [previous work](https://www.cs.rit.edu/~rlaz/files/Kenny_ICDAR_2017.pdf).
