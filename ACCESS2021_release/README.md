@@ -39,7 +39,6 @@ Similarly, to adopt the pretrained models while training *FCN-LectureNet*, the f
 
     FCN_BINARIZER_TRAIN_USE_PRETRAIN_OUTPUT
     FCN_BINARIZER_TRAIN_FROM_RECONSTRUCTION_PRETRAIN
-    FCN_BINARIZER_TRAIN_WEIGHT_FOREGROUND_EXTRA
     
 All models are saved in **output/models/** as default.
 
