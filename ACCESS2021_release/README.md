@@ -81,7 +81,7 @@ After segmenting lecture videos, the final video summary is represented by gener
 
 ## Evaluation Pipeline
 
-To evaluate the generated video segmentations, unedited and edited videos can be considered separately as differnt segmentation methods have different performances on these two types. By default, video sementations data is saved as `lecture_data/output/temporal/tempo_intervals_`.
+To evaluate the generated video segmentations, unedited and edited videos can be considered separately as differnt segmentation methods have different performances on these two types. By default, video sementations data is saved as `lecture_data/output/temporal/tempo_intervals_**`.
 
     python lecturenet_eval_segments.py [config file] [dataset split] [(optional)video_edited_gt]
     # For [dataset split]: 
