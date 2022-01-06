@@ -81,21 +81,36 @@ After segmenting lecture videos, the final video summary is represented by gener
 
 ## Evaluation Pipeline
 
+To evaluate the generated video segmentations, unedited and edited videos can be considered separately as differnt segmentation methods have different performances on these two types. By default, video sementations data is saved as `lecture_data/output/temporal/tempo_intervals_`.
+
+    python lecturenet_eval_segments.py [config file] [dataset split] [(optional)video_edited_gt]
+    # For [dataset split]: 
+    # 1 - training set
+    # 0 - testing set
+    
+
+    
+
+
+
+
+OK - lecturenet_eval_pretrain_text_detector.py (not DIBCO matrics)
+OK - lecturenet_eval_keyframe_bin.py
+
+
 ## Other Tools
 
 ---
 
 Evaluation Pipeline
-OK - lecturenet_eval_pretrain_text_detector.py
-OK - lecturenet_eval_segments.py
-OK - lecturenet_eval_keyframe_bin.py
-OK - test_FCN_Binarizer
+
 
 Tools
 OK - lecturenet_data_00_prepare_binary_text_masks.py
 OK - TEXT_ICDAR2017_COCOText_prepare.py
 OK - TEXT_dataset_validate_files.py
 OK - vis_gt_invervals.py
+OK - test_FCN_Binarizer
 
 
 #### News (Updated: 7/20/2021):
