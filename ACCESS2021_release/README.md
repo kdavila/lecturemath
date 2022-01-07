@@ -15,6 +15,8 @@ The config file [config/FCN_LectureNet.conf](https://github.com/kdavila/lecturem
 The **lecuture_data** folder includes default directories for (pre)training input data and saving outputs of the framework. 
 In addition, **db_LectureMath.xml** contains the meta data of all 34 videos in LectureMath dataset, and **video_edited_gt_34.json** includes the binary annotation about unedited / edited videos in LectureMath dataset.
 
+### News (Updated: 01/07/2022):
+The code and data for our paper have been available here. 
 
 
 ## FCN-LectureNet Training
@@ -105,5 +107,3 @@ Both evaluation scripts use the following parameter valus to select dataset type
 - `test_FCN_Binarizer.py` generates binary output of a given input image using any FCN-Lecture model and the corresponding config file.
 
 
-#### News (Updated: 01/07/2022):
-The code and data for our paper have been available here. 
