@@ -22,7 +22,7 @@ The code and data for our paper have been available here.
 ## FCN-LectureNet Training
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/adaniefei/Other/images/FCN-LectureNet3branches.png">
+<img src="https://raw.githubusercontent.com/adaniefei/Other/images/FCN-LectureNet3branches.png" width="700" height="685">
 </p>
 <p align="center">Figure 1: Architecture of the three branches of FCN-LectureNet</p>
 
