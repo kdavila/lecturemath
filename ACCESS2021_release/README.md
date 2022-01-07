@@ -23,15 +23,15 @@ In addition, **db_LectureMath.xml** contains the meta data of all 34 videos in L
 
 This section is for the training of *FCN-LectureNet*. As described in the paper, there are three separated branches: background estimation, text-mask estimation, and binarization of the resulting image from the previous two branches. The training is done by the following script:
 
-    python lecturenet_train_02_train_binarizer.py [path of config file]
+    python lecturenet_train_02_train_binarizer.py [path of the config file]
 
 To improve the performance, background estimation is pretrained via reconstructing median filtered image (**Med-PT**). 
 
-    python lecturenet_train_00_pretrain_reconstruction.py [path of config file]
+    python lecturenet_train_00_pretrain_reconstruction.py [path of the config file]
 
 The text-mask estimation branch is pretrained from pixel-level text detection (**TD-PT**). 
 
-    python lecturenet_train_01_pretrain_text_detector.py [path of config file]
+    python lecturenet_train_01_pretrain_text_detector.py [path of the config file]
 
 To pretrain text-mask branch from the pretrained reconstruction model, *FCN_BINARIZER_PRETRAIN_USE_RECONSTRUCTION_OUTPUT* needs to be set True. (**Med-PT + TD-PT**). 
 
@@ -53,7 +53,7 @@ Scripts in this section are for the entire pipeline of lecture video summarizati
 
 With pretrained models from [previous section](#fcn-lecturenet-training), the framework starts from video frames sampling and binarizing the extracted handwritten content. 
 
-     python pre_ST3D_v3.0_01_binarize.py [path of config file] [other parameters]
+     python pre_ST3D_v3.0_01_binarize.py [path of the config file] [other parameters]
 
 The config file provides parameters `FCN_BINARIZER_NET_*` that are used to create and load models. The default video frame sampling is `1 FPS`, and the binary outputs are saved in **output/temporal/** with the prefix `tempo_binary_`. 
 
@@ -61,8 +61,8 @@ The config file provides parameters `FCN_BINARIZER_NET_*` that are used to creat
 
 These outputs are then analyzed to identify unique and stable Connected Components (CCs) to represent handwritten content, and these CCs are grouped into tracklets that define the timeline of each group of handwritting symbols. 
      
-     python pre_ST3D_v3.0_02_cc_analysis.py [path of config file] [other parameters]
-     python pre_ST3D_v3.0_03_cc_grouping.py [path of config file] [other parameters]
+     python pre_ST3D_v3.0_02_cc_analysis.py [path of the config file] [other parameters]
+     python pre_ST3D_v3.0_03_cc_grouping.py [path of the config file] [other parameters]
      
 In `pre_ST3D_v3.0_03_cc_grouping.py`, three types of CCs are generated:
      
@@ -81,37 +81,29 @@ After segmenting lecture videos, the final video summary is represented by gener
 
 ## Evaluation Pipeline
 
-To evaluate the generated video segmentations, unedited and edited videos can be considered separately as differnt segmentation methods have different performances on these two types. By default, video sementations data is saved as `lecture_data/output/temporal/tempo_intervals_**`.
+To evaluate the generated video segmentations, unedited and edited videos can be considered separately as differnt segmentation methods have different performances on these two types. By default, video segmentation data is saved at `lecture_data/output/temporal/tempo_intervals_**`.
 
-    python lecturenet_eval_segments.py [config file] [dataset split] [(optional)video_edited_gt]
+    python lecturenet_eval_segments.py [path to the config file] [dataset split] [(optional)video_edited_gt]
+    
+The other script `lecturenet_eval_keyframe_bin.py` is used to evaluate the performance of FCN-LectureNet with different pretraining settings. This is evaluated using the groud truth keyframes of LectureMath dataset.
+
+     python lecturenet_eval_keyframe_bin.py [path to the config file] [path to the model] [dataset split]
+
+Both evaluation scripts use the following parameter valus to select dataset type.
+
     # For [dataset split]: 
     # 1 - training set
     # 0 - testing set
-    
-
-    
-
-
-
-
-OK - lecturenet_eval_pretrain_text_detector.py (not DIBCO matrics)
-OK - lecturenet_eval_keyframe_bin.py
-
 
 ## Other Tools
-
----
-
-Evaluation Pipeline
-
-
-Tools
-OK - lecturenet_data_00_prepare_binary_text_masks.py
-OK - TEXT_ICDAR2017_COCOText_prepare.py
-OK - TEXT_dataset_validate_files.py
-OK - vis_gt_invervals.py
-OK - test_FCN_Binarizer
+- `lecturenet_data_00_prepare_binary_text_masks.py` generates binary mask of text region for general dataset (e.g. LSVT or ART datasets) that contains a json file of text region annotations.
+- `TEXT_ICDAR2017_COCOText_prepare.py` generates binary mask of text region and split the COCO-Text dataset into **training**, **validation**, and **testing** sets.
+- `TEXT_dataset_validate_files.py` checks input images, and it will report those ones that:
+    - can't be loaded correctly (don't have EXIF orientation info)
+    - either the height or the width of the image is less than 256.
+- `vis_gt_intervals.py` can be used to generate plot similar to figure. 6 in the paper that visualizes the video segmentations.
+- `test_FCN_Binarizer.py` generates binary output of a given input image using any FCN-Lecture model and the corresponding config file.
 
 
-#### News (Updated: 7/20/2021):
-The code and data for our paper will be available here soon. 
+#### News (Updated: 01/07/2022):
+The code and data for our paper have been available here. 
