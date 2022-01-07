@@ -21,7 +21,10 @@ The code and data for our paper have been available here.
 
 ## FCN-LectureNet Training
 
-![alt text](https://raw.githubusercontent.com/adaniefei/Other/images/FCN-LectureNet3branches.png?raw=true "fcn-lecturenet-arch")
+<p align="center">
+<img src="https://raw.githubusercontent.com/adaniefei/Other/images/FCN-LectureNet3branches.png">
+</p>
+<p align="center">Figure 1: Architecture of the three branches of FCN-LectureNet</p>
 
 This section is for the training of *FCN-LectureNet*. As described in the paper, there are three separated branches: background estimation, text-mask estimation, and binarization of the resulting image from the previous two branches. The training is done by the following script:
 
@@ -50,8 +53,8 @@ Scripts in this section are for the entire pipeline of lecture video summarizati
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/adaniefei/Other/images/Overall-Arch.png">
-  Figure 1: Overall architecture of our lecture video summarization approach.
 </p>
+<p align="center"> Figure 2: Overall pipeline of our lecture video summarization approach.</p>
 
 With pretrained models from [previous section](#fcn-lecturenet-training), the framework starts from video frames sampling and binarizing the extracted handwritten content. 
 
@@ -98,12 +101,16 @@ Both evaluation scripts use the following parameter valus to select dataset type
     # 0 - testing set
 
 ## Other Tools
+- `test_FCN_Binarizer.py` generates binary output of a given input image using any FCN-Lecture model and the corresponding config file.
 - `lecturenet_data_00_prepare_binary_text_masks.py` generates binary mask of text region for general dataset (e.g. LSVT or ART datasets) that contains a json file of text region annotations.
 - `TEXT_ICDAR2017_COCOText_prepare.py` generates binary mask of text region and split the COCO-Text dataset into **training**, **validation**, and **testing** sets.
 - `TEXT_dataset_validate_files.py` checks input images, and it will report those ones that:
     - can't be loaded correctly (don't have EXIF orientation info)
     - either the height or the width of the image is less than 256.
-- `vis_gt_intervals.py` can be used to generate plot similar to figure. 6 in the paper that visualizes the video segmentations.
-- `test_FCN_Binarizer.py` generates binary output of a given input image using any FCN-Lecture model and the corresponding config file.
+- `vis_gt_intervals.py` can be used to generate visulization of video segmentations. The output is similar to the plot below. Every pair of two consecutive vertical red lines represent a video segmentation. 
+    <p align="center">
+    <img src="https://raw.githubusercontent.com/adaniefei/Other/images/video_interval.jpg" alt="vis of video segmentations" width="640" height="480">
+    </p>
+
 
 
