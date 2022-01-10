@@ -16,7 +16,7 @@ The **lecuture_data** folder includes default directories for (pre)training inpu
 In addition, **db_LectureMath.xml** contains the meta data of all 34 videos in LectureMath dataset, and **video_edited_gt_34.json** includes the binary annotation about unedited / edited videos in LectureMath dataset.
 
 ### News (Updated: 01/07/2022):
-The code and data for our paper have been available here. 
+The code and data for our paper have been made available here. 
 
 
 ## FCN-LectureNet Training
