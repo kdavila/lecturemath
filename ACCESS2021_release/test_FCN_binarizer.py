@@ -36,7 +36,10 @@ def main():
     # lecture_net = torch.load(model_filename)
 
     lecture_net = FCN_LectureNet.CreateFromConfig(config, 3, False)
-    lecture_net.load_state_dict(torch.load(model_filename))
+    if use_cuda:
+        lecture_net.load_state_dict(torch.load(model_filename))
+    else:
+        lecture_net.load_state_dict(torch.load(model_filename,map_location=torch.device('cpu')))
     lecture_net.eval()
 
     if use_cuda:
