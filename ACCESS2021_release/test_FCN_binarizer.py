@@ -26,6 +26,8 @@ def main():
     # read the configuration file ....
     config = Configuration.from_file(sys.argv[1])
 
+    use_cuda = config.get("FCN_BINARIZER_USE_CUDA", True)
+
     model_filename = sys.argv[2]
     input_filename = sys.argv[3]
     output_prefix = sys.argv[4]
@@ -37,7 +39,8 @@ def main():
     lecture_net.load_state_dict(torch.load(model_filename))
     lecture_net.eval()
 
-    lecture_net = lecture_net.cuda()
+    if use_cuda:
+        lecture_net = lecture_net.cuda()
 
     pytorch_total_params = sum(p.numel() for p in lecture_net.parameters() if p.requires_grad)
     print("Total Trainable Parameters in Network: " + str(pytorch_total_params))
