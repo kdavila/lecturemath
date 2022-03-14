@@ -13,10 +13,14 @@ The files in here are for the paper [*FCN-LectureNet: Extractive Summarization o
 The config file [config/FCN_LectureNet.conf](https://github.com/kdavila/lecturemath/blob/master/ACCESS2021_release/configs/FCN_LectureNet.conf) stores all parameters needed for these scripts. 
 
 The **lecuture_data** folder includes default directories for (pre)training input data and saving outputs of the framework. 
-In addition, **db_LectureMath.xml** contains the meta data of all 34 videos in LectureMath dataset, and **video_edited_gt_34.json** includes the binary annotation about unedited / edited videos in LectureMath dataset.
+In addition, **db_LectureMath.xml** contains the meta data of all 34 videos in LectureMath dataset, and **video_edited_gt_34.json** includes the binary annotation about unedited / edited videos in LectureMath dataset. 
 
-### News (Updated: 01/07/2022):
-The code and data for our paper have been made available here. 
+In addition, the *LectureMath annotations* used in IEEE Access paper and the *trained model* of FCN-LectureNet can be downloaded in [Data Release](#data-release).
+
+
+### News:
+- The annotations and trained model are now accessible in [Data Release](#data-release). (Updated: 03/14/2022)
+- The code and data for our paper have been made available here. (Updated: 01/07/2022)
 
 
 ## FCN-LectureNet Training
@@ -111,6 +115,51 @@ Both evaluation scripts use the following parameter valus to select dataset type
     <p align="center">
     <img src="https://raw.githubusercontent.com/adaniefei/Other/images/video_interval.jpg" alt="vis of video segmentations" width="640" height="480">
     </p>
+
+
+## Data Release
+
+The LectureMath annotations used in IEEE Access paper and the trained model of FCN-LectureNet can be downloaded from following links. 
+
+| Name  | Download |
+| :---         |     :---:      |
+| LectureMath v1.1 | [Link](https://www.dropbox.com/s/5ejyfmeqbr2r2jk/IEEE_access_data_release.zip?dl=0)  |
+| FCN-LectureNet Model  | [V34](https://www.dropbox.com/s/ea0266hm1vkcjwc/LectureNet_model_BIN_V34_final.dat?dl=0)  |
+
+
+### How to use annotations
+In *IEEEAccess Annotations*, each video has one folder and one xml file including anotation details, both named as *LectureMath_[video id]*.
+
+    LectureMath_[video id] folder:
+        - keyframes: PNG images of video keyframe summaries. Each image is named using its frame number.
+        - binary: the binarized version of images from *keyframes* folder. These binary images only preserve hand written content.
+        - portions: images of content-wise regions on each binarized keyframe.
+        - segments.xml: including keyframe indices and start/end frame number of video segments.
+        - portions.xml: indluding portion bounding boxes on each keyframe.
+        - unique_ccs.xml: describing the groups of unique connected components in the video. That is, grouping individual connected 
+          components across keyframes if they represent the same symbol.
+    
+    LectureMath_[video id].xml
+        - including keyframe indices, start/end frame number of video segments, and speaker actions. Each speaker action is annotated 
+          with action label and the start/end frame number of the action. 
+
+**Note**: the \<Polygon\>-\<Points\> in the speaker \<VideoObject\> have not been properly set to the true locations of the speaker and should be ignored.
+        
+## Citing FCN-LectureNet
+If you use FCN-LectureNet in your research or wish to refer to the results published in the paper, please use the following BibTeX entry.
+
+    @ARTICLE{9494351,
+    author={Davila, Kenny and Xu, Fei and Setlur, Srirangaraj and Govindaraju, Venu},
+    journal={IEEE Access}, 
+    title={FCN-LectureNet: Extractive Summarization of Whiteboard and Chalkboard Lecture Videos}, 
+    year={2021},
+    volume={9},
+    number={},
+    pages={104469-104484},
+    doi={10.1109/ACCESS.2021.3099427}}
+    
+        
+    
 
 
 
